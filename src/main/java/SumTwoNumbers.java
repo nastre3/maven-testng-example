@@ -10,6 +10,12 @@ public class SumTwoNumbers {
         sArgs = args;
     }
 
+    public SumTwoNumbers(int a, int b) {
+        sArgs[0] = "a";
+        sArgs[1] = "b";
+        // this.sArgs =
+    }
+
     /**
      * Проверяем, что в класс передано строго два аргумента
      *
