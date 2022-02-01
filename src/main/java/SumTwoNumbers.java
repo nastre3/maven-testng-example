@@ -10,18 +10,12 @@ public class SumTwoNumbers {
         sArgs = args;
     }
 
-    public SumTwoNumbers(int a, int b) {
-        sArgs[0] = "a";
-        sArgs[1] = "b";
-        // this.sArgs =
-    }
-
     /**
      * Проверяем, что в класс передано строго два аргумента
      *
      * @throws Exception
      */
-    protected void verifyNumberOfArguments() throws Exception {
+    protected void verifyNumberOfArguments() { // throws Exception
         String errorMsg = "";
         boolean result = false;
         switch (sArgs.length) {
@@ -60,19 +54,19 @@ public class SumTwoNumbers {
      * @return int
      * @throws Exception
      */
-    protected int addTwoNumbers() throws Exception {
+    protected int addTwoNumbers() throws SizeLimitExceededException{ // throws Exception, SizeLimitExceededException
         long sum = 0L;
         for (int arg : iArgs) {
             sum += arg;
             if (sum > Integer.MAX_VALUE) {
-                throw new SizeLimitExceededException(String.format("SUM of these numbers is more than Integer.MAX_VALUE(%d)", Integer.MAX_VALUE));
+               throw new SizeLimitExceededException(String.format("SUM of these numbers is more than Integer.MAX_VALUE(%d)", Integer.MAX_VALUE));
             }
         }
 
         return (int) sum;
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) { // throws Exception
         String msg;
 
         try {
